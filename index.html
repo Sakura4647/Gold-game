@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>清氣綿長｜出一口氣</title>
+    <title>清氣綿長｜出一口氣 💰</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Fonts -->
@@ -17,23 +17,24 @@
               sans: ['"Noto Sans TC"', 'sans-serif'],
             },
             colors: {
-              // Replacing Wood palette with Gold/Metal palette
-              gold: {
-                50: '#fffbf0',
-                100: '#fff7d6',
-                200: '#ffeeb0',
-                300: '#ffe08a',
-                400: '#ffd060',
-                500: '#f4c542', // Main
-                600: '#d9a620',
-                700: '#ae7d12',
-                800: '#8c6114', // Text main
-                900: '#754e0f', // Text dark
+              // Wood/Brown palette for Structure (Borders, Text)
+              wood: {
+                50: '#fdfbf7',
+                100: '#f7f3eb',
+                200: '#ece0d1',
+                300: '#dbc1a7', // Borders
+                400: '#c29d7a',
+                500: '#a87e56',
+                600: '#8c6342',
+                700: '#704c36',
+                800: '#5c4033', // Main Text
+                900: '#4a352b', // Dark Text
               },
-              metal: {
-                light: '#fff7d6',
-                main: '#f4c542',
-                dark: '#c49e33',
+              // Gold/Metal palette for Actions (Buttons, Highlights)
+              gold: {
+                400: '#fbbf24', // Hover
+                500: '#f59e0b', // Main Button
+                600: '#d97706', // Darker Gold
               }
             }
           }
@@ -43,23 +44,21 @@
     <style>
       body {
         font-family: 'Noto Sans TC', sans-serif;
-        background-color: #fffbf0;
+        background-color: #fdfbf7; /* Wood-50 */
         overflow-x: hidden;
         user-select: none;
         -webkit-user-select: none;
       }
-      /* Modified texture for Gold theme */
-      .gold-texture {
-        background-color: #fffbf0;
-        background-image: radial-gradient(#eaddbd 0.5px, transparent 0.5px), radial-gradient(#eaddbd 0.5px, #fffbf0 0.5px);
+      /* Texture maintained from Wood theme style */
+      .bg-texture {
+        background-color: #fdfbf7;
+        background-image: radial-gradient(#dbc1a7 0.5px, transparent 0.5px), radial-gradient(#dbc1a7 0.5px, #fdfbf7 0.5px);
         background-size: 20px 20px;
         background-position: 0 0, 10px 10px;
       }
-      /* Utility for hiding elements */
       .hidden-force {
         display: none !important;
       }
-      /* Animation classes */
       .fade-in { animation: fadeIn 0.3s ease-out; }
       @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
       
@@ -79,40 +78,44 @@
 }
 </script>
 </head>
-<body class="gold-texture text-gold-900 min-h-screen tracking-wide">
+<body class="bg-texture text-wood-900 min-h-screen tracking-wide">
 
     <!-- App Container -->
     <div id="app" class="relative min-h-screen">
         
         <!-- 1. Start Screen -->
         <div id="screen-start" class="min-h-screen flex flex-col items-center justify-center p-4">
-            <div class="max-w-md w-full bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-xl border-2 border-gold-300 text-center fade-in">
+            <div class="max-w-md w-full bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-xl border-2 border-wood-300 text-center fade-in">
                 <div class="mb-6"><span class="text-6xl">💰</span></div>
                 
-                <h1 class="text-3xl md:text-4xl font-black text-gold-900 mb-2 tracking-widest">清氣綿長｜出一口氣 🪙</h1>
-                <p class="text-gold-700 font-bold mb-8 tracking-wider">肺主氣，呼吸綿長則神清氣爽。</p>
+                <h1 class="text-3xl md:text-4xl font-black text-wood-900 mb-6 tracking-widest">清氣綿長｜出一口氣 💰</h1>
 
-                <div class="bg-gold-50 p-6 rounded-xl border border-gold-200 text-left mb-8">
-                    <h2 class="text-xl font-bold text-gold-800 mb-3 border-b border-gold-300 pb-2 flex items-center gap-2 tracking-wider">
+                <!-- Subtitle and Rules in one box -->
+                <div class="bg-wood-50 p-6 rounded-xl border border-wood-300 text-left mb-8">
+                    <p class="text-wood-700 font-bold mb-6 tracking-wider leading-relaxed border-b border-wood-200 pb-4">
+                        肺主氣，呼吸綿長則神清氣爽。金行對應臟腑為肺與大腸，與呼吸調控、氣息收斂有關。
+                    </p>
+                    
+                    <h2 class="text-xl font-bold text-wood-800 mb-3 flex items-center gap-2 tracking-wider">
                         <span>📜</span> 遊戲規則
                     </h2>
-                    <ul class="space-y-3 text-gold-800 leading-relaxed text-base font-medium tracking-wide">
+                    <ul class="space-y-3 text-wood-800 leading-relaxed text-base font-medium tracking-wide">
                         <li class="flex items-start gap-2">
-                            <span class="font-bold text-metal-dark">1.</span>
+                            <span class="font-bold text-gold-500 text-lg">①</span>
                             <span>深吸一口氣，按下開始遊戲</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <span class="font-bold text-metal-dark">2.</span>
+                            <span class="font-bold text-gold-500 text-lg">②</span>
                             <span>發出嘶的聲音，持續吐氣直到無法為止</span>
                         </li>
                         <li class="flex items-start gap-2">
-                            <span class="font-bold text-metal-dark">3.</span>
+                            <span class="font-bold text-gold-500 text-lg">③</span>
                             <span>按下遊戲結束查看成績</span>
                         </li>
                     </ul>
                 </div>
 
-                <button onclick="game.startCountdown()" class="w-full font-bold rounded-lg transition-all duration-200 shadow-sm active:scale-95 flex items-center justify-center gap-2 bg-metal-main hover:bg-gold-400 text-gold-900 shadow-gold-200 px-8 py-3 text-2xl tracking-widest border border-gold-600">
+                <button onclick="game.startCountdown()" class="w-full font-bold rounded-lg transition-all duration-200 shadow-sm active:scale-95 flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 text-white shadow-wood-200 px-8 py-3 text-2xl tracking-widest">
                     開始遊戲
                 </button>
             </div>
@@ -121,56 +124,58 @@
         <!-- 2. Game Screen (Initially Hidden) -->
         <div id="screen-game" class="hidden-force">
             <!-- Top Bar -->
-            <div class="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur shadow-md border-b border-gold-200 h-16 px-4">
+            <div class="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur shadow-md border-b border-wood-300 h-16 px-4">
                 <div class="max-w-6xl mx-auto h-full flex items-center justify-between">
-                    <!-- Status/Title -->
+                    <!-- Status -->
                     <div class="flex items-center gap-2 w-1/3">
-                        <span class="text-2xl">🪙</span>
-                        <div class="font-mono text-xl font-bold text-gold-900 hidden sm:block">
+                        <span class="text-2xl">💰</span>
+                        <div class="font-mono text-xl font-bold text-wood-900 hidden sm:block">
                            吐氣中...
                         </div>
                     </div>
-                    <!-- Title -->
-                    <div class="w-1/3 text-center text-gold-700 font-bold text-xl tracking-widest">清氣綿長</div>
+                    <!-- Title (Empty as requested) -->
+                    <div class="w-1/3 text-center text-wood-700 font-bold text-xl tracking-widest">
+                        <!-- Empty -->
+                    </div>
                     <!-- Buttons -->
                     <div class="flex items-center justify-end gap-2 w-1/3">
-                        <button onclick="ui.showRules()" class="font-bold rounded-lg transition-all duration-200 shadow-sm active:scale-95 flex items-center justify-center gap-2 border-2 border-gold-600 text-gold-800 hover:bg-gold-100 px-3 py-1 text-base tracking-wide">
+                        <button onclick="ui.showRules()" class="font-bold rounded-lg transition-all duration-200 shadow-sm active:scale-95 flex items-center justify-center gap-2 border-2 border-wood-400 text-wood-800 hover:bg-wood-50 px-3 py-1 text-base tracking-wide">
                             規則
                         </button>
-                        <button onclick="game.restart()" class="font-bold rounded-lg transition-all duration-200 shadow-sm active:scale-95 flex items-center justify-center gap-2 bg-gold-600 hover:bg-gold-700 text-white px-3 py-1 text-base tracking-wide">
+                        <button onclick="game.restart()" class="font-bold rounded-lg transition-all duration-200 shadow-sm active:scale-95 flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 text-white px-3 py-1 text-base tracking-wide">
                             重來
                         </button>
-                        <!-- Result button is disabled during play, enabled after stop -->
-                        <button id="btn-result" onclick="ui.showResult()" disabled class="hidden font-bold rounded-lg transition-all duration-200 shadow-sm active:scale-95 flex items-center justify-center gap-2 bg-gold-600 hover:bg-gold-700 text-white px-3 py-1 text-base opacity-50 cursor-not-allowed tracking-wide">
+                        <!-- Result button -->
+                        <button id="btn-result" onclick="ui.showResult()" disabled class="hidden font-bold rounded-lg transition-all duration-200 shadow-sm active:scale-95 flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 text-white px-3 py-1 text-base opacity-50 cursor-not-allowed tracking-wide">
                             結果
                         </button>
                     </div>
                 </div>
             </div>
 
-            <!-- Main Breathing Interaction Area -->
+            <!-- Main Interaction Area -->
             <div class="w-full min-h-screen flex flex-col items-center justify-center p-4 pt-20 pb-12">
                 
                 <!-- Large Timer Display -->
                 <div class="mb-12 flex flex-col items-center justify-center">
-                    <div class="text-gold-600 font-bold text-xl mb-4 tracking-wider">持續吐氣時間</div>
-                    <div id="timer-display" class="font-mono text-8xl md:text-9xl font-black text-gold-800 drop-shadow-sm flex items-end leading-none">
+                    <div class="text-wood-600 font-bold text-xl mb-4 tracking-wider">持續吐氣時間</div>
+                    <div id="timer-display" class="font-mono text-8xl md:text-9xl font-black text-wood-800 drop-shadow-sm flex items-end leading-none">
                         <span id="timer-val">0</span>
-                        <span class="text-4xl md:text-5xl text-gold-600 mb-2 md:mb-4 ml-2">s</span>
+                        <span class="text-4xl md:text-5xl text-wood-600 mb-2 md:mb-4 ml-2">s</span>
                     </div>
                 </div>
 
                 <!-- Stop Action Button -->
-                <button id="btn-stop-game" onclick="game.stopExhale()" class="pulse-slow w-64 h-64 rounded-full font-black text-3xl md:text-4xl transition-all duration-200 shadow-xl flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-gold-300 to-gold-500 hover:from-gold-400 hover:to-gold-600 text-gold-900 border-8 border-white ring-4 ring-gold-200 active:scale-95 active:shadow-inner cursor-pointer">
+                <button id="btn-stop-game" onclick="game.stopExhale()" class="pulse-slow w-64 h-64 rounded-full font-black text-3xl md:text-4xl transition-all duration-200 shadow-xl flex flex-col items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 text-white border-8 border-white ring-4 ring-wood-200 active:scale-95 active:shadow-inner cursor-pointer">
                     <span>遊戲結束</span>
-                    <span class="text-lg font-medium opacity-80">(停止吐氣)</span>
+                    <span class="text-lg font-medium opacity-90">(停止吐氣)</span>
                 </button>
 
             </div>
         </div>
 
         <!-- 3. Countdown Overlay -->
-        <div id="overlay-countdown" class="hidden-force fixed inset-0 z-50 flex items-center justify-center bg-gold-900/40 backdrop-blur-sm">
+        <div id="overlay-countdown" class="hidden-force fixed inset-0 z-50 flex items-center justify-center bg-wood-900/40 backdrop-blur-sm">
             <div class="flex flex-col items-center">
                  <div class="text-white text-2xl font-bold mb-4 drop-shadow-md">準備深呼吸...</div>
                 <div id="countdown-number" class="text-9xl font-black text-white drop-shadow-lg animate-ping">3</div>
@@ -178,10 +183,10 @@
         </div>
 
         <!-- 4. Result Modal -->
-        <div id="modal-result" class="hidden-force fixed inset-0 z-50 flex items-center justify-center p-4 bg-gold-900/60 backdrop-blur-sm fade-in">
-            <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden p-6 text-center relative">
+        <div id="modal-result" class="hidden-force fixed inset-0 z-50 flex items-center justify-center p-4 bg-wood-900/60 backdrop-blur-sm fade-in">
+            <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden p-6 text-center relative border-2 border-wood-300">
                 <!-- Close X Button -->
-                <button onclick="ui.closeResult()" class="absolute top-4 right-4 text-gold-400 hover:text-gold-700 transition-colors p-2 rounded-full hover:bg-gold-100">
+                <button onclick="ui.closeResult()" class="absolute top-4 right-4 text-wood-400 hover:text-wood-700 transition-colors p-2 rounded-full hover:bg-wood-100">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
@@ -189,45 +194,45 @@
 
                 <div class="text-7xl mb-4">💰</div>
                 <div class="mb-4">
-                    <p class="text-gold-600 mb-1 font-bold tracking-wider text-lg">吐氣時間</p>
-                    <p class="text-5xl font-black text-gold-900 tracking-wide mb-2">
+                    <p class="text-wood-600 mb-1 font-bold tracking-wider text-lg">吐氣時間</p>
+                    <p class="text-5xl font-black text-wood-900 tracking-wide mb-2">
                         <span id="res-time">0</span> s
                     </p>
                 </div>
-                <div class="bg-gold-50 p-4 rounded-xl border-2 border-gold-200 mb-4">
-                    <h3 id="res-msg" class="text-2xl font-bold text-metal-dark mb-2 tracking-wider"></h3>
-                    <p id="res-submsg" class="text-gold-700 text-base mb-3 font-medium tracking-wide"></p>
-                    <div class="flex justify-center items-center gap-1 text-gold-500 text-base font-bold bg-white py-2 rounded-lg border border-gold-100">
+                <div class="bg-wood-50 p-4 rounded-xl border-2 border-wood-200 mb-4">
+                    <h3 id="res-msg" class="text-2xl font-bold text-wood-800 mb-2 tracking-wider"></h3>
+                    <p id="res-submsg" class="text-wood-600 text-base mb-3 font-medium tracking-wide"></p>
+                    <div class="flex justify-center items-center gap-1 text-gold-600 text-base font-bold bg-white py-2 rounded-lg border border-wood-200 shadow-sm">
                         <span>得分：</span>
-                        <span id="res-score" class="text-3xl text-gold-800">0</span>
+                        <span id="res-score" class="text-3xl text-wood-800">0</span>
                         <span>分</span>
                     </div>
                 </div>
                 
                 <!-- Scoring Table -->
                 <div class="text-left mb-6">
-                    <h4 class="text-base font-bold text-gold-500 mb-2 border-b border-gold-100 pb-1 tracking-wider">🏅 計分方式</h4>
-                    <div class="space-y-2 text-sm text-gold-700 tracking-wide">
+                    <h4 class="text-base font-bold text-wood-500 mb-2 border-b border-wood-200 pb-1 tracking-wider">🏅 計分方式</h4>
+                    <div class="space-y-2 text-sm text-wood-700 tracking-wide">
                         <div class="flex justify-between items-center gap-2">
-                            <span class="font-bold text-metal-dark whitespace-nowrap">≥ 30 秒</span>
-                            <span class="font-bold">3分</span>
-                            <span class="text-right flex-1 text-gold-500">肺氣充盈，清氣綿長</span>
+                            <span class="font-bold text-wood-900 whitespace-nowrap">≥ 30 秒</span>
+                            <span class="font-bold text-gold-600">3分</span>
+                            <span class="text-right flex-1">肺氣充盈，清氣綿長</span>
                         </div>
                         <div class="flex justify-between items-center gap-2">
-                            <span class="font-bold text-metal-dark whitespace-nowrap">15–30 秒</span>
-                            <span class="font-bold">2分</span>
-                            <span class="text-right flex-1 text-gold-500">肺氣不錯，收斂有度</span>
+                            <span class="font-bold text-wood-900 whitespace-nowrap">15–30 秒</span>
+                            <span class="font-bold text-gold-600">2分</span>
+                            <span class="text-right flex-1">肺氣不錯，收斂有度</span>
                         </div>
                         <div class="flex justify-between items-center gap-2">
-                            <span class="font-bold text-metal-dark whitespace-nowrap">&lt; 15 秒</span>
-                            <span class="font-bold">1分</span>
-                            <span class="text-right flex-1 text-gold-500">肺氣偏弱，需多調養</span>
+                            <span class="font-bold text-wood-900 whitespace-nowrap">&lt; 15 秒</span>
+                            <span class="font-bold text-gold-600">1分</span>
+                            <span class="text-right flex-1">肺氣偏弱，需多調養</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="flex flex-col gap-3">
-                    <button onclick="game.startCountdown(); ui.closeResult();" class="w-full font-bold rounded-lg transition-all duration-200 shadow-sm active:scale-95 flex items-center justify-center gap-2 bg-metal-main hover:bg-gold-400 text-gold-900 shadow-gold-200 px-6 py-2 text-lg tracking-widest border border-gold-600">
+                    <button onclick="game.startCountdown(); ui.closeResult();" class="w-full font-bold rounded-lg transition-all duration-200 shadow-sm active:scale-95 flex items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 text-white shadow-wood-200 px-6 py-2 text-lg tracking-widest border border-transparent">
                         再來一次
                     </button>
                 </div>
@@ -235,26 +240,25 @@
         </div>
 
         <!-- 5. Rules Modal (In-Game) -->
-        <div id="modal-rules" class="hidden-force fixed inset-0 z-50 flex items-center justify-center p-4 bg-gold-900/60 backdrop-blur-sm fade-in">
-            <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden p-6 relative">
+        <div id="modal-rules" class="hidden-force fixed inset-0 z-50 flex items-center justify-center p-4 bg-wood-900/60 backdrop-blur-sm fade-in">
+            <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden p-6 relative border-2 border-wood-300">
                  <!-- Close X Button -->
-                <button onclick="ui.closeRules()" class="absolute top-4 right-4 text-gold-400 hover:text-gold-700 transition-colors p-2 rounded-full hover:bg-gold-100">
+                <button onclick="ui.closeRules()" class="absolute top-4 right-4 text-wood-400 hover:text-wood-700 transition-colors p-2 rounded-full hover:bg-wood-100">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
 
-                <p class="text-gold-700 mb-2 font-bold text-center tracking-wider text-lg">金行｜調息之法</p>
-                <div class="text-base text-gold-600 mb-6 leading-relaxed font-medium tracking-wide border-l-4 border-metal-main pl-4 bg-gold-50 p-2 rounded-r">
+                <p class="text-wood-700 mb-2 font-bold text-center tracking-wider text-lg">清氣綿長｜出一口氣 💰</p>
+                <div class="text-base text-wood-600 mb-6 leading-relaxed font-medium tracking-wide border-l-4 border-gold-500 pl-4 bg-wood-50 p-2 rounded-r">
                     <p class="mb-2">肺主氣，呼吸綿長則神清氣爽。</p>
                     <p>金行對應臟腑為肺與大腸，與呼吸調控、氣息收斂有關。</p>
                 </div>
-                <h3 class="text-2xl font-bold text-center text-gold-800 mb-4 border-b border-gold-100 pb-3 tracking-widest">📜 遊戲規則</h3>
-                <ul class="space-y-4 text-gold-800 font-medium tracking-wide">
-                    <li class="flex gap-2 text-base"><span class="font-bold text-metal-dark">1.</span><span>深吸一口氣，準備好後按下開始</span></li>
-                    <li class="flex gap-2 text-base"><span class="font-bold text-metal-dark">2.</span><span>遊戲開始後，計時開始</span></li>
-                    <li class="flex gap-2 text-base"><span class="font-bold text-metal-dark">3.</span><span>發出嘶的聲音，持續吐氣直到無法為止</span></li>
-                    <li class="flex gap-2 text-base"><span class="font-bold text-metal-dark">4.</span><span>按下遊戲結束查看成績</span></li>
+                <h3 class="text-2xl font-bold text-center text-wood-800 mb-4 border-b border-wood-100 pb-3 tracking-widest">📜 遊戲規則</h3>
+                <ul class="space-y-4 text-wood-800 font-medium tracking-wide">
+                    <li class="flex gap-2 text-base"><span class="font-bold text-gold-500 text-lg">①</span><span>深吸一口氣，按下開始遊戲</span></li>
+                    <li class="flex gap-2 text-base"><span class="font-bold text-gold-500 text-lg">②</span><span>發出嘶的聲音，持續吐氣直到無法為止</span></li>
+                    <li class="flex gap-2 text-base"><span class="font-bold text-gold-500 text-lg">③</span><span>按下遊戲結束查看成績</span></li>
                 </ul>
             </div>
         </div>
@@ -268,6 +272,7 @@
             startTime: 0,
             elapsedSeconds: 0,
             timerId: null,
+            lastResult: null
         };
 
         // UI Controller
@@ -342,7 +347,16 @@
                     this.els.resTime.textContent = resultData.time;
                     this.els.resScore.textContent = resultData.score;
                     this.els.resMsg.textContent = resultData.message;
-                    this.els.resSubMsg.textContent = resultData.subMessage;
+                    this.els.resSubMsg.textContent = resultData.subMessage; // Currently blank in requirements, using it for secondary feedback
+                    
+                    // Hide submsg if empty
+                    if(!resultData.subMessage) {
+                        this.els.resSubMsg.classList.add('hidden');
+                    } else {
+                        this.els.resSubMsg.classList.remove('hidden');
+                        this.els.resSubMsg.textContent = resultData.subMessage;
+                    }
+
                     this.els.modalResult.classList.remove('hidden-force');
                 }
             },
@@ -415,23 +429,21 @@
             calculateResult(seconds) {
                 let score = 0;
                 let message = '';
-                let subMessage = '';
-
+                // subMessage not explicitly required in new prompt table, but structure maintained.
+                // Using the specific text requested.
+                
                 if (seconds >= 30) {
                     score = 3;
                     message = '肺氣充盈，清氣綿長';
-                    subMessage = '太棒了！你的氣息非常穩定且綿長，肺氣十足。';
                 } else if (seconds >= 15) {
                     score = 2;
                     message = '肺氣不錯，收斂有度';
-                    subMessage = '表現不錯！持續練習，呼吸會更加深長。';
                 } else {
                     score = 1;
                     message = '肺氣偏弱，需多調養';
-                    subMessage = '別氣餒，多做深呼吸運動，增強肺部功能！';
                 }
 
-                return { score, message, subMessage };
+                return { score, message, subMessage: '' };
             },
 
             restart() {
