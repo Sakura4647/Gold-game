@@ -34,7 +34,13 @@
               gold: {
                 400: '#fbbf24', // Hover
                 500: '#f59e0b', // Main Button
-                600: '#d97706', // Darker Gold
+                600: '#d97706', // Darker Gold / Secondary Text
+                700: '#b45309', // Primary Text
+              },
+              // Metal palette specifically for text highlights as requested
+              metal: {
+                dark: '#92400e', // Deep bronze/gold
+                main: '#f59e0b',
               }
             }
           }
@@ -88,15 +94,20 @@
             <div class="max-w-md w-full bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-xl border-2 border-wood-300 text-center fade-in">
                 <div class="mb-6"><span class="text-6xl">💰</span></div>
                 
-                <h1 class="text-3xl md:text-4xl font-black text-wood-900 mb-6 tracking-widest">清氣綿長｜出一口氣 💰</h1>
+                <h1 class="text-3xl md:text-4xl font-black text-wood-900 mb-6 tracking-widest">清氣綿長｜出一口氣</h1>
 
                 <!-- Subtitle and Rules in one box -->
                 <div class="bg-wood-50 p-6 rounded-xl border border-wood-300 text-left mb-8">
-                    <p class="text-wood-700 font-bold mb-6 tracking-wider leading-relaxed border-b border-wood-200 pb-4">
-                        肺主氣，呼吸綿長則神清氣爽。金行對應臟腑為肺與大腸，與呼吸調控、氣息收斂有關。
+                    <!-- Modified to use wood colors as requested -->
+                    <p class="text-wood-700 mb-4 font-bold tracking-wider text-lg">
+                        肺主氣，呼吸綿長則神清氣爽。
+                    </p>
+                    <p class="text-base text-wood-600 mb-6 leading-relaxed font-medium tracking-wide">
+                        金行對應臟腑為肺與大腸，與呼吸調控、氣息收斂有關。
                     </p>
                     
-                    <h2 class="text-xl font-bold text-wood-800 mb-3 flex items-center gap-2 tracking-wider">
+                    <!-- Added bottom border and padding to header -->
+                    <h2 class="text-xl font-bold text-wood-800 mb-3 border-b border-wood-300 pb-2 flex items-center gap-2 tracking-wider">
                         <span>📜</span> 遊戲規則
                     </h2>
                     <ul class="space-y-3 text-wood-800 leading-relaxed text-base font-medium tracking-wide">
@@ -200,11 +211,14 @@
                     </p>
                 </div>
                 <div class="bg-wood-50 p-4 rounded-xl border-2 border-wood-200 mb-4">
-                    <h3 id="res-msg" class="text-2xl font-bold text-wood-800 mb-2 tracking-wider"></h3>
-                    <p id="res-submsg" class="text-wood-600 text-base mb-3 font-medium tracking-wide"></p>
+                    <!-- Modified color to text-metal-dark -->
+                    <h3 id="res-msg" class="text-2xl font-bold text-metal-dark mb-2 tracking-wider"></h3>
+                    <!-- Modified styles as requested: text-gold-700 and leading-relaxed -->
+                    <p id="res-submsg" class="text-gold-700 text-base mb-3 font-medium leading-relaxed tracking-wide"></p>
                     <div class="flex justify-center items-center gap-1 text-gold-600 text-base font-bold bg-white py-2 rounded-lg border border-wood-200 shadow-sm">
                         <span>得分：</span>
-                        <span id="res-score" class="text-3xl text-wood-800">0</span>
+                        <!-- Modified color to text-metal-dark -->
+                        <span id="res-score" class="text-3xl text-metal-dark">0</span>
                         <span>分</span>
                     </div>
                 </div>
@@ -214,18 +228,24 @@
                     <h4 class="text-base font-bold text-wood-500 mb-2 border-b border-wood-200 pb-1 tracking-wider">🏅 計分方式</h4>
                     <div class="space-y-2 text-sm text-wood-700 tracking-wide">
                         <div class="flex justify-between items-center gap-2">
-                            <span class="font-bold text-wood-900 whitespace-nowrap">≥ 30 秒</span>
-                            <span class="font-bold text-gold-600">3分</span>
+                            <!-- Modified color to text-metal-dark -->
+                            <span class="font-bold text-metal-dark whitespace-nowrap">≥ 30 秒</span>
+                            <!-- Changed score color to text-gold-700 -->
+                            <span class="font-bold text-gold-700">3分</span>
                             <span class="text-right flex-1">肺氣充盈，清氣綿長</span>
                         </div>
                         <div class="flex justify-between items-center gap-2">
-                            <span class="font-bold text-wood-900 whitespace-nowrap">15–30 秒</span>
-                            <span class="font-bold text-gold-600">2分</span>
+                            <!-- Modified color to text-metal-dark -->
+                            <span class="font-bold text-metal-dark whitespace-nowrap">15–30 秒</span>
+                            <!-- Changed score color to text-gold-700 -->
+                            <span class="font-bold text-gold-700">2分</span>
                             <span class="text-right flex-1">肺氣不錯，收斂有度</span>
                         </div>
                         <div class="flex justify-between items-center gap-2">
-                            <span class="font-bold text-wood-900 whitespace-nowrap">&lt; 15 秒</span>
-                            <span class="font-bold text-gold-600">1分</span>
+                            <!-- Modified color to text-metal-dark -->
+                            <span class="font-bold text-metal-dark whitespace-nowrap">&lt; 15 秒</span>
+                            <!-- Changed score color to text-gold-700 -->
+                            <span class="font-bold text-gold-700">1分</span>
                             <span class="text-right flex-1">肺氣偏弱，需多調養</span>
                         </div>
                     </div>
@@ -347,7 +367,7 @@
                     this.els.resTime.textContent = resultData.time;
                     this.els.resScore.textContent = resultData.score;
                     this.els.resMsg.textContent = resultData.message;
-                    this.els.resSubMsg.textContent = resultData.subMessage; // Currently blank in requirements, using it for secondary feedback
+                    this.els.resSubMsg.textContent = resultData.subMessage;
                     
                     // Hide submsg if empty
                     if(!resultData.subMessage) {
@@ -429,21 +449,23 @@
             calculateResult(seconds) {
                 let score = 0;
                 let message = '';
-                // subMessage not explicitly required in new prompt table, but structure maintained.
-                // Using the specific text requested.
+                let subMessage = '';
                 
                 if (seconds >= 30) {
                     score = 3;
                     message = '肺氣充盈，清氣綿長';
+                    subMessage = '保持這樣的節奏很好！';
                 } else if (seconds >= 15) {
                     score = 2;
                     message = '肺氣不錯，收斂有度';
+                    subMessage = '再多練習，會越來越穩定。';
                 } else {
                     score = 1;
                     message = '肺氣偏弱，需多調養';
+                    subMessage = '別急，慢慢練習深呼吸就好。';
                 }
 
-                return { score, message, subMessage: '' };
+                return { score, message, subMessage };
             },
 
             restart() {
