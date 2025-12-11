@@ -94,7 +94,9 @@
             <div class="max-w-md w-full bg-white/90 backdrop-blur-sm p-8 rounded-2xl shadow-xl border-2 border-wood-300 text-center fade-in">
                 <div class="mb-6"><span class="text-6xl">💰</span></div>
                 
-                <h1 class="text-3xl md:text-4xl font-black text-wood-900 mb-6 tracking-widest">清氣綿長｜出一口氣</h1>
+                <div class="flex justify-center items-center whitespace-nowrap mb-6">
+                    <h1 class="text-3xl md:text-4xl font-extrabold text-wood-900 tracking-wide">清氣綿長｜出一口氣</h1>
+                </div>
 
                 <!-- Subtitle and Rules in one box -->
                 <div class="bg-wood-50 p-6 rounded-xl border border-wood-300 text-left mb-8">
@@ -117,11 +119,11 @@
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="font-bold text-gold-500 text-lg">②</span>
-                            <span>發出嘶的聲音，持續吐氣直到無法為止</span>
+                            <span>發出嘶的聲音，持續吐氣</span>
                         </li>
                         <li class="flex items-start gap-2">
                             <span class="font-bold text-gold-500 text-lg">③</span>
-                            <span>按下遊戲結束查看成績</span>
+                            <span>無法吐氣時，按下「我無法吐氣了」，結束遊戲</span>
                         </li>
                     </ul>
                 </div>
@@ -178,8 +180,7 @@
 
                 <!-- Stop Action Button -->
                 <button id="btn-stop-game" onclick="game.stopExhale()" class="pulse-slow w-64 h-64 rounded-full font-black text-3xl md:text-4xl transition-all duration-200 shadow-xl flex flex-col items-center justify-center gap-2 bg-gold-500 hover:bg-gold-400 text-white border-8 border-white ring-4 ring-wood-200 active:scale-95 active:shadow-inner cursor-pointer">
-                    <span>遊戲結束</span>
-                    <span class="text-lg font-medium opacity-90">(停止吐氣)</span>
+                    <span>我無法吐氣了</span>
                 </button>
 
             </div>
@@ -261,7 +262,7 @@
 
         <!-- 5. Rules Modal (In-Game) -->
         <div id="modal-rules" class="hidden-force fixed inset-0 z-50 flex items-center justify-center p-4 bg-wood-900/60 backdrop-blur-sm fade-in">
-            <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden p-6 relative border-2 border-wood-300">
+            <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden p-8 relative border-2 border-wood-300">
                  <!-- Close X Button -->
                 <button onclick="ui.closeRules()" class="absolute top-4 right-4 text-wood-400 hover:text-wood-700 transition-colors p-2 rounded-full hover:bg-wood-100">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -269,16 +270,36 @@
                     </svg>
                 </button>
 
-                <p class="text-wood-700 mb-2 font-bold text-center tracking-wider text-lg">清氣綿長｜出一口氣 💰</p>
-                <div class="text-base text-wood-600 mb-6 leading-relaxed font-medium tracking-wide border-l-4 border-gold-500 pl-4 bg-wood-50 p-2 rounded-r">
-                    <p class="mb-2">肺主氣，呼吸綿長則神清氣爽。</p>
-                    <p>金行對應臟腑為肺與大腸，與呼吸調控、氣息收斂有關。</p>
+                <!-- New Header Layout -->
+                <div class="mt-2 mb-6 text-center">
+                    <h3 class="text-2xl font-bold text-wood-800 mb-3 tracking-widest">肺主氣，呼吸綿長則神清氣爽。</h3>
+                    <p class="text-base text-wood-600 leading-relaxed font-medium tracking-wide px-2">
+                        金行對應臟腑為肺與大腸，與呼吸調控、氣息收斂有關。
+                    </p>
                 </div>
-                <h3 class="text-2xl font-bold text-center text-wood-800 mb-4 border-b border-wood-100 pb-3 tracking-widest">📜 遊戲規則</h3>
+
+                <!-- Rules Title with Divider -->
+                <div class="mb-6 border-b border-wood-200 pb-3">
+                    <div class="flex items-center justify-center gap-2">
+                        <span class="text-2xl">📜</span>
+                        <h4 class="text-xl font-bold text-wood-800 tracking-widest">遊戲規則</h4>
+                    </div>
+                </div>
+
+                <!-- Rules List -->
                 <ul class="space-y-4 text-wood-800 font-medium tracking-wide">
-                    <li class="flex gap-2 text-base"><span class="font-bold text-gold-500 text-lg">①</span><span>深吸一口氣，按下開始遊戲</span></li>
-                    <li class="flex gap-2 text-base"><span class="font-bold text-gold-500 text-lg">②</span><span>發出嘶的聲音，持續吐氣直到無法為止</span></li>
-                    <li class="flex gap-2 text-base"><span class="font-bold text-gold-500 text-lg">③</span><span>按下遊戲結束查看成績</span></li>
+                    <li class="flex items-start gap-3">
+                        <span class="font-bold text-gold-500 text-xl leading-none mt-0.5">①</span>
+                        <span class="text-base text-justify leading-relaxed">深吸一口氣，按下開始遊戲</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="font-bold text-gold-500 text-xl leading-none mt-0.5">②</span>
+                        <span class="text-base text-justify leading-relaxed">發出嘶的聲音，持續吐氣</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <span class="font-bold text-gold-500 text-xl leading-none mt-0.5">③</span>
+                        <span class="text-base text-justify leading-relaxed">無法吐氣時，按下「我無法吐氣了」，結束遊戲</span>
+                    </li>
                 </ul>
             </div>
         </div>
